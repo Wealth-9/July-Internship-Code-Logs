@@ -36,7 +36,7 @@ G=nx.Graph()
 #     "E":(7.9,3.6)
 
 # }
-G.add_nodes_from([1,2,3,4,5])
+G.add_nodes_from([1,2,3,4,"E"])
 G.add_edges_from([(1,3),(2,3), (2,4),(3,4), (4,5)])
 
 pos={
@@ -44,7 +44,7 @@ pos={
     2:(4.5,6.6),
     3:(3.6,1.4),
     4:(5.8,3.5),
-    5:(7.9,3.6)
+    "E":(7.9,3.6)
 }
 
 nx.draw(G,pos=pos, with_labels=True, node_color="red", node_size=3000, font_color="white",font_size=20, font_family="Times New Roman",font_weight="bold", width=5 )
