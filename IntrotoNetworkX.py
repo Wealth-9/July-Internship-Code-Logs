@@ -1,5 +1,12 @@
 import matplotlib.pyplot as plt
 import networkx as nx
+# import numpy as np
+# import random 
+
+# #using both numpy random and random seed because thaat is what networkX python  library uses.
+# seed=0
+# random.seed(0)
+# np.random.seed(seed)
 
 G=nx.Graph()
 G.add_node("A")
@@ -14,7 +21,16 @@ G.add_edge("B","D")
 G.add_edge("C","D")
 G.add_edge("D","E")
 
+#if you have the coordinates of the graph
+pos={
+    "A":(1,5),
+    "B":(4.5,6.6),
+    "C":(3.6,1.4),
+    "D":(5.8,3.5),
+    "E":(7.9,3.6)
 
-nx.draw(G,with_labels=True, node_color="red", node_size=3000, font_color="white",font_family="Times New Roman",font_weight="bold", width=5 )
+}
+
+nx.draw(G,pos=pos, with_labels=True, node_color="red", node_size=3000, font_color="white",font_family="Times New Roman",font_weight="bold", width=5 )
 plt.margins(0.2)
 plt.show()
