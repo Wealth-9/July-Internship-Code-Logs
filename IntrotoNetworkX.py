@@ -9,28 +9,44 @@ import networkx as nx
 # np.random.seed(seed)
 
 G=nx.Graph()
-G.add_node("A")
-G.add_node("B")
-G.add_node("C")
-G.add_node("D")
-G.add_node("E")
+# G.add_node("A")
+# G.add_node("B")
+# G.add_node("C")
+# G.add_node("D")
+# G.add_node("E") #instead of multiple  lines,parse the nodes as a list
 
-G.add_edge("A","C")
-G.add_edge("B","C")
-G.add_edge("B","D")
-G.add_edge("C","D")
-G.add_edge("D","E")
+# G.add_nodes_from(["A","B","C","D","E"]) #or G.add_nodes_from("ABCDE") Since it is a string
 
-#if you have the coordinates of the graph
+# # G.add_edge("A","C")
+# # G.add_edge("B","C")
+# # G.add_edge("B","D")
+# # G.add_edge("C","D")
+# # G.add_edge("D","E")
+
+# #G.add_edges_from([("A","C"),("B","C"), ("B","D"),("C","D"), ("D","E")])
+# #or
+# G.add_edges_from(["AC","BC","BD","CD","DE"])
+
+# #if you have the coordinates of the graph
+# pos={
+#     "A":(1,5),
+#     "B":(4.5,6.6),
+#     "C":(3.6,1.4),
+#     "D":(5.8,3.5),
+#     "E":(7.9,3.6)
+
+# }
+G.add_nodes_from([1,2,3,4,5])
+G.add_edges_from([(1,3),(2,3), (2,4),(3,4), (4,5)])
+
 pos={
-    "A":(1,5),
-    "B":(4.5,6.6),
-    "C":(3.6,1.4),
-    "D":(5.8,3.5),
-    "E":(7.9,3.6)
-
+    1:(1,5),
+    2:(4.5,6.6),
+    3:(3.6,1.4),
+    4:(5.8,3.5),
+    5:(7.9,3.6)
 }
 
-nx.draw(G,pos=pos, with_labels=True, node_color="red", node_size=3000, font_color="white",font_family="Times New Roman",font_weight="bold", width=5 )
+nx.draw(G,pos=pos, with_labels=True, node_color="red", node_size=3000, font_color="white",font_size=20, font_family="Times New Roman",font_weight="bold", width=5 )
 plt.margins(0.2)
 plt.show()
