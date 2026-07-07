@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import networkx as nx
+import matplotlib.pyplot as plt
 
 
 
@@ -29,3 +30,17 @@ G = nx.from_pandas_edgelist( #reads dataframe row by row and builds a graph
 
 print("Nodes:",G.nodes())
 print("Edges:", G.edges(data=True))
+# NetworkX doesn't draw te actual graph for visualisation ,matplotlib does
+
+pos=nx.spring_layout(G, seed=42) #nx.spring_layout  calculates where each node sit on the canvas.#position/coordinates
+#spring- represent a physics simulation,where edges pull nodes together
+
+#to show transaction amount on the edges as attributes
+
+nx.draw(G, pos=pos,with_labels=True, node_color="pink", node_size=1500, arrows=True)
+
+#to show transaction amount on the edges as attributes
+edge_labels = nx.get_edge_attributes(G, "amount")
+nx.draw_networkx_edge_labels(G, pos=pos, edge_labels=edge_labels)
+
+plt.show()

@@ -82,7 +82,7 @@ pos = nx.spring_layout(G, seed=42)
 
 nx.draw(
     G, pos, with_labels=True,
-    node_color="red", node_size=2500,
+    node_color="red", node_size=1500,
     font_color="white", font_size=12, font_weight="bold",
     width=2, arrowsize=20
 )
